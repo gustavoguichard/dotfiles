@@ -1,6 +1,6 @@
 [user]
-  email = sferik@gmail.com
-  name = Erik Michaels-Ober
+  email = gustavoguichard@gmail.com
+  name = Gustavo Guichard
 [gist]
   browse = true
   private = true
@@ -23,13 +23,15 @@
   untracked = cyan
 [alias]
   bl = blame -C
-  co = checkout
+  ck = checkout
   df = diff --word-diff
   l1 = log --oneline --decorate
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   st = status -bs
+  s = status
+  p = push
 [core]
-  excludesfile = /Users/sferik/.gitignore_global
+  excludesfile = ~/.gitignore_global
   quotepath = false
 [push]
   default = tracking
@@ -42,3 +44,7 @@
 [mergetool "threesome"]
   cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
   trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
